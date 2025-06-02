@@ -24,7 +24,7 @@ class Registro(db.Model):
 with app.app_context():
     db.create_all()
 
-# Servir frontend
+# Servir frontend 
 @app.route('/')
 def serve_frontend():
     return send_from_directory(app.static_folder, 'index.html')
