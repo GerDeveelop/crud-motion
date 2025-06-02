@@ -19,7 +19,7 @@ def configure_database():
         load_dotenv()
 
     # Obtiene la URL de la base de datos
-    database_url = os.getenv('DATABASE_URL')
+    database_url = os.getenv('dbmotion')
     
     # Validación crítica
     if not database_url:
