@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='assets/registro.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/registro.css') }}">
 </head>
 <body>
   <div class="main-section">
@@ -59,11 +59,10 @@
 
   <!-- Logo inferior -->
   <div>
-    <button class="logo-motion" onclick="location.href='{{ url_for('static', filename='assets/Imagologo_motion.svg') }}'">
+    <button class="logo-motion" onclick="location.href='{{ url_for('main.index') }}'">
       <img src="{{ url_for('static', filename='assets/Imagologo_motion.svg') }}" alt="logo-motion">
     </button>
   </div>
-
-  <script src="{{ url_for('static', filename='assets/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
