@@ -21,7 +21,7 @@ def configure_database():
     # Obtiene la URL de la base de datos
     database_url = os.getenv('dbmotion')
     
-    # Validación crítica
+    # Validación crítica 
     if not database_url:
         raise ValueError("❌ Error: 'DATABASE_URL' no está definida en las variables de entorno.")
     
