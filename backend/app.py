@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
@@ -6,25 +6,30 @@ import os
 # Cargar variables de entorno
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend/monitoring_innovation')
 
 # Configurar la base de datos con SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('postgresql://motion:bIUlznGTkHKjVpXyw4SVRzm6InfGxXUu@dpg-d0uf8n6mcj7s739kivug-a.oregon-postgres.render.com/dbmotion')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Ejemplo de modelo
+# Modelo de datos
 class Registro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     marca = db.Column(db.String(100), nullable=False)
     localidad = db.Column(db.String(100), nullable=False)
     aspirante = db.Column(db.String(100), nullable=False)
 
-# Crear tablas (solo para desarrollo, no usar en producción directamente)
+# Crear tablas (solo en primer despliegue)
 with app.app_context():
     db.create_all()
 
-# Ruta para crear registros (POST)
+# Servir frontend
+@app.route('/')
+def serve_frontend():
+    return send_from_directory(app.static_folder, 'index.html')
+
+# API Routes
 @app.route('/api/registro', methods=['POST'])
 def crear_registro():
     data = request.json
@@ -37,7 +42,6 @@ def crear_registro():
     db.session.commit()
     return jsonify({"message": "Registro creado"}), 201
 
-# Ruta para obtener registros (GET)
 @app.route('/api/registro', methods=['GET'])
 def obtener_registros():
     registros = Registro.query.all()
@@ -51,4 +55,4 @@ def obtener_registros():
     ])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
