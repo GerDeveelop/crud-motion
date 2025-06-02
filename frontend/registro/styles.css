@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+/* Contenedor principal */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem 8rem;
+  flex-wrap: wrap;
+}
+
+/* Formulario lateral */
+.form-container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  border-radius: 15px;
+  width: 420px; /* Aumentado */
+  min-height: 300px; /* Opcional: más altura */
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.form-row img.icon {
+  width: 40px;
+  margin-right: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Botón principal */
+.add-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.add-button:hover {
+  background-color: #007dc617;
+  border-radius: 20px;
+}
+.action-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-left: 35%;
+}
+.cancel-button {
+  padding: 7px 20px;
+  background-color: transparent;
+  color: #110101;
+  border-color: #C6007E;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cancel-button:hover {
+  background-color: #C6007E;
+}
+
+.create-button {
+  padding: 7px 20px;
+  background-color: transparent;
+  color: #000000;
+  border-color: #40CEE4;
+  border-radius: 5px;
+  cursor: pointer; 
+}
+
+.create-button:hover {
+  background-color: #40CEE4;
+}
+/* Tabla de datos */
+.table-container {
+  flex: 1;
+  margin-left: 3rem;
+  max-width: calc(100% - 580px); /* Ajuste dinámico para evitar que la tabla se pase */
+  min-width: 600px;
+}
+
+table {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+thead {
+  background-color: #E280BE;
+  color: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E280BE;
+}
+
+td img {
+  width: 24px;
+  cursor: pointer;
+}
+
+/* Logo inferior */
+.logo-motion {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-left: 40%;
+}
+
+.logo-motion img {
+  width: 250px;
+  height: auto;
+}
+
+.edit-button {
+  background-color: transparent;
+  margin: 2px;
+  border: none;
+  margin-left: 5%;
+}
+
+.delete-button {
+  background-color: transparent;
+  margin: 2px;
+  border: none;
+}
+
