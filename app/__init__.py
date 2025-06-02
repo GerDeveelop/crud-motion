@@ -9,7 +9,7 @@ def create_app():
     # Configuración básica de Flask
     app = Flask(__name__,
                 static_folder='../static',
-                template_folder='templates')
+                template_folder='../templates')
     
     # ======================
     # 1. Configuración de BD
@@ -41,10 +41,7 @@ def create_app():
     # 2. Inicialización de DB
     # ======================
     db.init_app(app)
-    
-    # Creación de tablas (solo en primer despliegue)
-    with app.app_context():
-        db.create_all()
+
     
     # ======================
     # 3. Registro de Blueprints
