@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__, static_folder='../frontend/monitoring_innovation')
 
 # Configurar la base de datos con SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URL'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
