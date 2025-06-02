@@ -3,11 +3,11 @@ from . import db
 from .models import Registro
 from flask import current_app as app
 
-@app.route('/')
+@app.route('/template')
 def home():
     return render_template('index.html')
 
-@app.route('/registro')
+@app.route('/resgistro')
 def registro():
     return render_template('registro.html')
 

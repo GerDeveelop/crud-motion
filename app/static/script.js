@@ -13,18 +13,18 @@ let filaEditando = null; // Guardará la fila en edición
 const iconMap = [
   {
     selector: '.form-row:nth-of-type(2) img.icon',
-    original: '/crud/frontend/assets/Icon_vehiculo.svg',
-    active: '/crud/frontend/assets/Icon_vehiculo1.svg'
+    original: '/app/static/assets/Icon_vehiculo.svg',
+    active: '/app/static/assets/Icon_vehiculo1.svg'
   },
   {
     selector: '.form-row:nth-of-type(3) img.icon',
-    original: '/crud/frontend/assets/Icon_puntoubicacion.svg',
-    active: '/crud/frontend/assets/Icon_puntoubicacion1.svg'
+    original: '/app/static/assets/Icon_puntoubicacion.svg',
+    active: '/app/static/assets/Icon_puntoubicacion1.svg'
   },
   {
     selector: '.form-row:nth-of-type(4) img.icon',
-    original: '/crud/frontend/assets/Icon_persona.svg',
-    active: '/crud/frontend/assets/Icon_persona1.svg'
+    original: '/app/static/assets/Icon_persona.svg',
+    active: '/app/static/assets/Icon_persona1.svg'
   }
 ];
 
@@ -74,10 +74,10 @@ createBtn.addEventListener("click", () => {
     celdas[2].innerHTML = `
       ${nombre}
       <button class="edit-button">
-        <img src="/crud/frontend/assets/Icon_editar.svg" alt="Editar">
+        <img src="/app/static/assets/Icon_editar.svg" alt="Editar">
       </button>
       <button class="delete-button">
-        <img src="/crud/frontend/assets/Icon_eliminar.svg" alt="Eliminar">
+        <img src="/app/static/assets/Icon_eliminar.svg" alt="Eliminar">
       </button>
     `;
     filaEditando = null;
@@ -90,10 +90,10 @@ createBtn.addEventListener("click", () => {
       <td>
         ${nombre}
         <button class="edit-button">
-          <img src="/crud/frontend/assets/Icon_editar.svg" alt="Editar">
+          <img src="/app/static/assets/Icon_editar.svg" alt="Editar">
         </button>
         <button class="delete-button">
-          <img src="/crud/frontend/assets/Icon_eliminar.svg" alt="Eliminar">
+          <img src="/app/static/assets/Icon_eliminar.svg" alt="Eliminar">
         </button>
       </td>
     `;
@@ -138,7 +138,7 @@ tableBody.addEventListener("click", (event) => {
 
     // Cambiar icono de editar
     const img = editBtn.querySelector("img");
-    if (img) img.src = "/crud/frontend/assets/Icon_editar1.svg";
+    if (img) img.src = "/app/static/assets/Icon_editar1.svg";
 
   } else if (deleteBtn) {
     const fila = event.target.closest("tr");
@@ -147,10 +147,10 @@ tableBody.addEventListener("click", (event) => {
     else {
       // Cambiar icono de eliminar si se activa pero no se elimina
       const img = deleteBtn.querySelector("img");
-      if (img) img.src = "/crud/frontend/assets/Icon_eliminar.svg";
+      if (img) img.src = "/app/static/assets/Icon_eliminar.svg";
 
       setTimeout(() => {
-        if (img) img.src = "/crud/frontend/assets/Icon_eliminar1.svg";
+        if (img) img.src = "/app/static/assets/Icon_eliminar1.svg";
       }, 1000);
     }
   }

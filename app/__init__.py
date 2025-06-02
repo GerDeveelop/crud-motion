@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 db = SQLAlchemy()
 
 def create_app():
-    app = Flask(__name__, static_folder='static', template_folder='../templates')
+    app = Flask(__name__, static_folder='static', template_folder='templates')
 
     # Cargar .env si no estamos en producción
     if os.environ.get('RENDER') != 'true':
