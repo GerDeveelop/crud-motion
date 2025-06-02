@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # ================================================
 # 1. Configuración Inicial de la Aplicación Flask
 # ================================================
-app = Flask(__name__, static_folder='../frontend/monitoring_innovation')
+app = Flask(__name__, static_folder='../frontend')
 
 # ================================================
 # 2. Configuración de la Base de Datos (PostgreSQL)
