@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base-de-datos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">
+</head>
+<body>
+  <div class="main-section">
+    <!-- Formulario lateral -->
+    <div class="form-container">
+      <div class="form-row">
+        <button class="add-button">
+          <img src="{{ url_for('static', filename='assets/Icon_crear.svg') }}" alt="Agregar">
+        </button>
+      </div>
+      
+      <div class="form-row">
+        <img src="{{ url_for('static', filename='assets/Icon_vehiculo.svg') }}" class="icon" alt="Marca">
+        <input type="text" id="marca" placeholder="Marca">
+      </div>
+      
+      <div class="form-row">
+        <img src="{{ url_for('static', filename='assets/Icon_puntoubicacion.svg') }}" class="icon" alt="Sucursal">
+        <input type="text" id="localidad" placeholder="Localidad">
+      </div>
+      
+      <div class="form-row">
+        <img src="{{ url_for('static', filename='assets/Icon_persona.svg') }}" class="icon" alt="Aspirante">
+        <input type="text" id="aspirante" placeholder="Nombre Apellido">
+      </div>
+      
+      <div class="action-buttons" alt="create-cancel-button" style="display: none;">
+        <button class="cancel-button">Cancelar</button>
+        <button class="create-button">Crear</button>
+      </div>
+    </div>
+
+    <!-- Tabla de registros -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Sucursal</th>
+            <th>Aspirante</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos dinámicos (se llenarán con JavaScript) -->
+          <tr>
+            <td style="display: none;">Marca</td>
+            <td style="display: none;">Localidad</td>
+            <td style="display: none;">Nombre Apellido</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Logo inferior con enlace corregido -->
+  <div>
+    <button class="logo-motion" onclick="window.location.href='{{ url_for('views.index') }}'">
+      <img src="{{ url_for('static', filename='assets/Imagologotipo_motion.svg') }}" alt="logo-motion">
+    </button>
+  </div>
+  
+  <!-- JavaScript (ruta corregida) -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
