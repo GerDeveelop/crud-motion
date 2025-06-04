@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="main-section">
-    <!-- Formulario lateral -->
+    <!-- Formulario lateral izquierdo -->
     <div class="form-container">
       <div class="form-row">
         <button class="add-button">
@@ -51,7 +51,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Datos dinámicos (se llenarán con JavaScript) -->
           <tr>
             <td style="display: none;">Marca</td>
             <td style="display: none;">Localidad</td>
@@ -62,14 +61,12 @@
     </div>
   </div>
 
-  <!-- Logo inferior con enlace corregido -->
-  <div>
+  <!-- Logo inferior -->
+  <footer>
     <button class="logo-motion" onclick="window.location.href='{{ url_for('views.home') }}'">
       <img src="{{ url_for('static', filename='assets/Imagologotipo_motion.svg') }}" alt="logo-motion">
     </button>
-  </div>
-  
-  <!-- JavaScript (ruta corregida) -->
+  </footer>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

@@ -1,6 +1,4 @@
-// ==============================================
-// 1. Configuración inicial y selección de elementos
-// ==============================================
+
 const inputMarca = document.getElementById("marca");
 const inputLocalidad = document.getElementById("localidad");
 const inputNombre = document.getElementById("aspirante");
@@ -11,7 +9,7 @@ const actionButtons = document.querySelector(".action-buttons");
 const addBtn = document.querySelector(".add-button");
 const tableBody = document.querySelector(".table-container tbody");
 
-let filaEditando = null; // Almacena la fila en edición
+let filaEditando = null;
 
 // Mapeo de íconos (rutas estáticas consistentes)
 const iconMap = [
@@ -32,9 +30,6 @@ const iconMap = [
   }
 ];
 
-// ==============================================
-// 2. Funciones auxiliares
-// ==============================================
 const resetForm = () => {
   inputMarca.value = "";
   inputLocalidad.value = "";
@@ -48,16 +43,14 @@ const resetForm = () => {
   });
 };
 
-const toggleIcons = (state) => { // 'active' o 'original'
+//activar iconos originales y de cambio
+const toggleIcons = (state) => {
   iconMap.forEach(icon => {
     const img = document.querySelector(icon.selector);
     if (img) img.src = icon[state];
   });
 };
 
-// ==============================================
-// 3. Event Listeners
-// ==============================================
 // Mostrar botones de acción
 addBtn.addEventListener("click", () => {
   filaEditando = null;
@@ -116,7 +109,7 @@ createBtn.addEventListener("click", () => {
   resetForm();
 });
 
-// Manejo de eventos en la tabla
+// evento de editar y eliminar en la tabla
 tableBody.addEventListener("click", (event) => {
   const editBtn = event.target.closest(".edit-button");
   const deleteBtn = event.target.closest(".delete-button");
